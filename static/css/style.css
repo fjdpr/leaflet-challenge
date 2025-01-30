@@ -1,10 +1,32 @@
+/* Removes padding and margin from body */
 body {
   padding: 0;
   margin: 0;
 }
 
+/* Sets map, body, and html height to 100% */
 #map,
 body,
 html {
   height: 100%;
+}
+
+/* Style for the legend container */
+.info.legend {
+  background-color: white;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  line-height: 24px;
+  border: 2px solid #ccc;
+}
+
+/* Style for the colored squares in the legend */
+.info.legend i {
+  width: 24px;
+  height: 24px;
+  float: right;
+  margin-left: 8px;
+  opacity: 0.8;
 }
