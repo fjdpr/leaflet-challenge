@@ -20,6 +20,7 @@ html {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   line-height: 24px;
   border: 2px solid #ccc;
+  transition: background-color 0.2s, box-shadow 0.2s;
 }
 
 /* Style for the colored squares in the legend */
@@ -29,4 +30,37 @@ html {
   float: right;
   margin-left: 8px;
   opacity: 0.8;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Hover effects on the legend */
+.info.legend:hover {
+  background-color: #f9f9f9;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Smooth transitions for interactive elements */
+.leaflet-marker-icon:hover {
+  transform: scale(1.2);
+  z-index: 1000;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Style for the popup content */
+.leaflet-popup-content-wrapper {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.leaflet-popup-tip-container {
+  display: none;
+}
+
+/* Font and text style for the legend and popups */
+.info.legend,
+.leaflet-popup-content {
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  color: #333;
 }

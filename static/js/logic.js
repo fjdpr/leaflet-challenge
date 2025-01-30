@@ -93,7 +93,7 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
     style: styleInfo,
     // Create a popup for each marker to display the magnitude and location of the earthquake after the marker has been created and styled
     onEachFeature: function (feature, layer) {
-      layer.bindPopup("<div style='text-align: center;'><strong>Magnitude:</strong><br>" + feature.properties.mag + "<br><strong>Location:</strong><br>" + feature.properties.place + "</div>");
+      layer.bindPopup("<div style='text-align: center;'><strong>Magnitude:</strong><br>" + feature.properties.mag + "<br><strong>Location:</strong><br>" + feature.properties.place + "<br><strong>Depth:</strong><br>" + feature.geometry.coordinates[2] + " km</div>");
     }
   // OPTIONAL: Step 2
   // Add the data to the earthquake layer instead of directly to the map.
@@ -119,6 +119,9 @@ legend.onAdd = function () {
     "#ea2c2c"
   ]; 
 
+  // Add header for the legend
+  div.innerHTML += "<h4 style='text-align: center; margin: 0;'>DEPTH (KM)</h4>"
+
   // Initialize depth intervals and colors for the legend
   let labels = [];
 
@@ -128,6 +131,7 @@ legend.onAdd = function () {
       '<i style="background:' + colors[i] + '"></i> ' +
       depth[i] + (depth[i + 1] ? '&ndash;' + depth[i + 1] + ' km<br>' : '+ km');
   }
+
   return div;
 };
 
